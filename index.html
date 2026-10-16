@@ -1,0 +1,729 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>7 Star Engineering Kinetics Homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: one ruled, light engineering base; dark hero and proof bands; a single
+   red accent taken from the company's own profile. Sections follow the agreed order. */
+:root{
+  --bg:#F4F3EF; --surface:#FFFFFF; --ink:#141414; --ink-2:#4B4A47; --line:#D9D7D0;
+  --red:#C8161D; --red-2:#E3262D; --band:#121212; --on-band:#F2F1ED; --on-band-2:#B9B7B0;
+  --f-display:'Barlow Condensed',Arial,sans-serif; --f-body:'Barlow',Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E0E0E; --surface:#181818; --ink:#F2F1ED; --ink-2:#BDBBB4; --line:#2C2C2C;
+    --band:#070707; --on-band:#F2F1ED; --on-band-2:#B9B7B0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E0E0E; --surface:#181818; --ink:#F2F1ED; --ink-2:#BDBBB4; --line:#2C2C2C;
+  --band:#070707; --on-band:#F2F1ED; --on-band-2:#B9B7B0; color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+:focus-visible{outline:2px solid var(--red-2);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto}
+.sec{padding-block:88px}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.dark{background:var(--band);color:var(--on-band)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 13px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.eyebrow::before{content:"";width:28px;height:3px;background:var(--red)}
+.dark .eyebrow{color:var(--red-2)}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1;text-wrap:balance;text-transform:uppercase}
+h2{font-size:clamp(36px,4.6vw,58px);margin-bottom:18px}
+h3{font-size:24px;font-weight:700;line-height:1.1;margin-bottom:10px}
+.lead{font-size:18px;color:var(--ink-2);max-width:62ch}
+.head{margin-bottom:48px}
+.ic{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font:700 15px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-2)}
+.btn-line{border:1.5px solid currentColor}
+.btn-line:hover{background:#fff;color:#141414;border-color:#fff}
+.dark .btn-line:hover{background:#fff;color:#141414}
+.slash{height:26px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+
+/* 0. Top bar + header */
+.topbar{background:var(--band);color:var(--on-band-2);font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;padding-block:9px}
+.topbar b{color:var(--on-band);font-weight:600}
+.hdr{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:10px}
+.hdr img{height:58px;width:auto}
+.nav{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font:600 15px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--ink-2);padding-block:8px;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink);border-color:var(--red)}
+.hdr .btn{padding:12px 18px;white-space:nowrap}
+
+/* 1. Hero */
+.hero{position:relative;color:#fff;background:#0a0a0a;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.72) 55%,rgba(10,10,10,.4) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:104px 0}
+.hero .eyebrow{color:#fff}
+.hero .eyebrow::before{background:var(--red-2)}
+.hero h1{font-size:clamp(50px,8vw,104px);max-width:12ch}
+.hero h1 span{color:var(--red-2)}
+.hero .lead{color:#D6D4CE;margin-top:24px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.stats{margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.18);background:rgba(10,10,10,.55)}
+.stats div{padding:26px 22px;border-right:1px solid rgba(255,255,255,.12)}
+.stats div:last-child{border-right:0}
+.stats strong{display:block;font:800 52px/1 var(--f-display)}
+.stats span{font-size:14px;color:#BDBBB4;text-transform:uppercase;letter-spacing:.08em}
+
+/* 2. Partners marquee */
+.partners{background:var(--band);padding-block:30px;overflow:hidden;border-bottom:1px solid #222}
+.partners .label{font:700 13px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--on-band-2);text-align:center;margin-bottom:20px}
+.marquee{position:relative;overflow:hidden}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--band),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--band),transparent)}
+.track{display:flex;gap:14px;width:max-content;animation:mq 46s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.lg-cell{background:#fff;height:78px;width:150px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:12px 16px}
+.lg-cell img{max-height:100%;max-width:100%;object-fit:contain}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+/* 3. Problem -> Outcome */
+.po{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--surface)}
+.po>div{padding:40px 36px}
+.po>div+div{border-left:1px solid var(--line)}
+.po .tag{font:700 13px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px;display:flex;gap:10px;align-items:center}
+.po .prob .tag{color:var(--red)}
+.po .out .tag{color:var(--ink)}
+.po ul{list-style:none;display:grid;gap:0}
+.po li{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:14px}
+.po li:last-child{border-bottom:0}
+.po li b{display:block;font:700 19px/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
+.po li span{color:var(--ink-2);font-size:15px}
+.po .prob li .ic{color:var(--red)}
+.po .out li .ic{color:var(--ink)}
+.po-arrow{display:none}
+
+/* 4. Portfolio */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal figure{position:relative;overflow:hidden;background:#000;aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.88));color:#fff;font:700 17px/1.15 var(--f-display);letter-spacing:.03em;text-transform:uppercase}
+.gal figure::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--red)}
+.pf-foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.pf-foot p{color:var(--ink-2);font-size:15px}
+
+/* 5. Services grid */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{padding:30px 26px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);transition:background .25s}
+.svc:hover{background:var(--band)}
+.svc:hover h3,.svc:hover li{color:var(--on-band)}
+.svc:hover .ic{color:var(--red-2)}
+.svc .ic{color:var(--red);margin-bottom:20px}
+.svc ul{list-style:none;margin-top:10px;display:grid;gap:4px}
+.svc li{color:var(--ink-2);font-size:15px;transition:color .25s}
+.svc li::before{content:"— ";color:var(--red)}
+
+/* 6. Who we serve */
+.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sector{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.sector img{width:100%;height:170px;object-fit:cover}
+.sector .sb{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.sector p{color:var(--ink-2);font-size:15px}
+.sector .lgs{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
+.sector .lgs div{background:#fff;height:50px;width:92px;display:flex;align-items:center;justify-content:center;padding:6px 8px;border:1px solid var(--line)}
+.sector .lgs img{max-height:100%;max-width:100%;object-fit:contain}
+
+/* 7. Real success stories (case files from the profile, no invented results) */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.case .ph{position:relative;height:200px;background:#000}
+.case .ph img{width:100%;height:100%;object-fit:cover}
+.case .ph::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--red)}
+.case .cb{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.case .sector-tag{font:700 12px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.case p{color:var(--ink-2);font-size:15px}
+.case .res{margin-top:auto;border:1px dashed var(--ink-2);padding:12px 14px;font-size:14px;color:var(--ink-2)}
+
+/* 8. Process */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.step{padding:0 18px 0 0;position:relative}
+.step .n{font:800 56px/1 var(--f-display);color:var(--red);margin-bottom:14px}
+.step::before{content:"";display:block;height:2px;background:var(--line);margin-bottom:22px}
+.step:first-child::before{background:var(--red)}
+.step h3{font-size:21px}
+.step p{color:var(--ink-2);font-size:15px}
+
+/* 9. CTA */
+.cta-band{background:var(--red);color:#fff;position:relative;overflow:hidden}
+.cta-band::after{content:"";position:absolute;right:-60px;top:-40px;width:340px;height:340px;background:rgba(0,0,0,.14);transform:rotate(18deg)}
+.cta-band .wrap{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.cta-band h2{color:#fff;margin:0 0 12px;max-width:18ch}
+.cta-band p{color:#FBE3E3;max-width:52ch}
+.cta-band .btns{display:flex;gap:12px;flex-wrap:wrap}
+.cta-band .btn-red{background:#fff;color:var(--red)}
+.cta-band .btn-red:hover{background:#f2f2f2}
+.cta-band .btn-line{color:#fff}
+
+/* 10. Why choose us */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #2a2a2a}
+.why-grid>div{padding:30px 26px 0 0}
+.why-grid>div+div{padding-left:26px;border-left:1px solid #2a2a2a}
+.why-grid .ic{color:var(--red-2);margin-bottom:18px}
+.why-grid p{color:var(--on-band-2);font-size:15px}
+.cert-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:56px}
+.cert-strip figure{background:#fff;padding:8px;aspect-ratio:3/4}
+.cert-strip img{width:100%;height:100%;object-fit:contain}
+
+/* 11. Testimonials (placeholders until approved quotes are supplied) */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quote{background:var(--surface);border:1px dashed var(--ink-2);padding:28px 26px;display:flex;flex-direction:column;gap:14px}
+.quote .q{font:800 46px/1 var(--f-display);color:var(--red)}
+.quote p{color:var(--ink-2);font-size:15px;flex:1}
+.quote .who{font:700 14px/1.3 var(--f-display);letter-spacing:.06em;text-transform:uppercase}
+.quote .who small{display:block;font:500 14px var(--f-body);text-transform:none;letter-spacing:0;color:var(--ink-2)}
+.quote .pl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.note{margin-top:20px;color:var(--ink-2);font-size:14px}
+
+/* 12. FAQs */
+.faq{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:22px 0;font:700 20px/1.25 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.faq summary::after{content:"+";font:800 28px/1 var(--f-display);color:var(--red);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--ink-2);max-width:64ch}
+
+/* 13. Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.direct{display:grid;gap:12px}
+.drow{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);padding:16px 20px;flex-wrap:wrap}
+.drow .ic{color:var(--red);width:24px;height:24px}
+.drow b{font-size:18px;font-weight:600;flex:1 1 200px;min-width:0;word-break:break-word}
+.copy{font:700 13px/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--ink);padding:9px 14px;color:var(--ink)}
+.copy:hover{background:var(--ink);color:var(--bg)}
+.copy.done{background:#1a7a3a;border-color:#1a7a3a;color:#fff}
+.offices{display:grid;gap:14px}
+.office{background:var(--surface);border:1px solid var(--line);padding:22px 24px}
+.office strong{display:block;font:700 14px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.office p{color:var(--ink-2)}
+
+/* 14. Footer */
+footer{background:var(--band);color:var(--on-band-2);padding-block:56px 28px;border-top:4px solid var(--red)}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:36px}
+.foot img{height:74px;width:auto;margin-bottom:16px}
+.foot h4{font:700 14px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.foot a:hover{color:#fff}
+.legal{margin-top:40px;padding-top:20px;border-top:1px solid #2a2a2a;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Entrance: content is visible at rest; animation only when JS runs */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+/* Responsive */
+@media (max-width:1040px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid>div:nth-child(3){padding-left:0;border-left:0}
+  .cert-strip{grid-template-columns:repeat(3,1fr)}
+  .process{grid-template-columns:repeat(3,1fr);row-gap:36px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .hdr .nav{display:none}
+  .po{grid-template-columns:1fr}
+  .po>div+div{border-left:0;border-top:1px solid var(--line)}
+  .sectors,.cases,.quotes{grid-template-columns:1fr 1fr}
+  .faq,.contact{grid-template-columns:1fr;gap:36px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(2){border-right:0}
+  .stats div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+}
+@media (max-width:600px){
+  .sec{padding-block:64px}
+  .hero .wrap{padding-top:70px}
+  .hero .btn{width:100%;justify-content:center}
+  .stats strong{font-size:40px}
+  .svc-grid,.gal,.sectors,.cases,.quotes,.why-grid{grid-template-columns:1fr}
+  .why-grid>div+div{padding-left:0;border-left:0;padding-top:24px}
+  .gal{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:1fr}
+  .cert-strip{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr}
+  .hdr img{height:48px}
+  .hdr .btn{padding:10px 12px;font-size:13px}
+  .cta-band .btns .btn{width:100%;justify-content:center}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V10l5 3V10l5 3V6l4 2v13zM3 21h18"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16v-4l2-5h10l2 5v4M3 16h18M7 16v2M17 16v2M6 12h12"/></symbol>
+  <symbol id="i-road" viewBox="0 0 24 24"><path d="M8 3 4 21M16 3l4 18M12 4v3M12 11v3M12 18v3"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14 7a4 4 0 0 0 5 5l-9 9a2 2 0 0 1-3-3l9-9a4 4 0 0 1-2-2z"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2 21 7v10l-9 5-9-5V7zM3 7l9 5 9-5M12 12v10"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 17 17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5h10v16M14 9h6v12M4 21h16M7 9h1M7 13h1M10 9h1M10 13h1M7 17h1M10 17h1"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+</svg>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Registered office: <b>338-Umar Block, A.I.T., Lahore</b></span>
+    <span>Phone <b>+92 423 543 4444</b> &nbsp;·&nbsp; <b>info@7star.org</b></span>
+  </div>
+</div>
+
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a href="#top" aria-label="7 Star Engineering Kinetics home"><img src="assets/logo/logo-dark-on-light.png" alt="7 Star Engineering Kinetics (Pvt) Ltd logo"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#portfolio">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-red">Request a Quote</a>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <img class="bg" src="assets/photos/hero-refinery-dusk.jpg" alt="Refinery and storage tanks at dusk">
+  <div class="wrap">
+    <div class="eyebrow">Your Partner in EPC Engineering Projects &amp; Plant Services</div>
+    <h1>Turnkey <span>EPCC</span> Engineering for Pakistan's Industry</h1>
+    <p class="lead">Civil, Mechanical and Electrical &amp; Instrumentation under one roof, for Oil &amp; Gas, Power, Petro-Chemical, Cement, Automobile and Infrastructure clients.</p>
+    <div class="cta">
+      <a href="#portfolio" class="btn btn-red">View Projects <svg class="ic" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
+      <a href="#contact" class="btn btn-line">Talk to Our Team</a>
+    </div>
+    <div class="stats">
+      <div><strong>2004</strong><span>Founded in Lahore</span></div>
+      <div><strong>6</strong><span>Industry sectors</span></div>
+      <div><strong>56</strong><span>Projects in our profile</span></div>
+      <div><strong>39</strong><span>Client logos featured</span></div>
+    </div>
+  </div>
+  <div class="slash"></div>
+</section>
+
+<!-- 2. PARTNERS (logos marquee, real client logos) -->
+<section class="partners" id="partners" aria-label="Clients and partners">
+  <div class="label">Organizations we have worked with</div>
+  <div class="marquee">
+    <div class="track" id="track"></div>
+  </div>
+</section>
+
+<!-- 3. PROBLEM -> OUTCOME -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">The problem we solve</div>
+      <h2>From risky EPC projects to handover you can trust</h2>
+    </div>
+    <div class="po rv">
+      <div class="prob">
+        <div class="tag"><svg class="ic" style="width:22px;height:22px"><use href="#i-x"/></svg> Common EPC risks</div>
+        <ul>
+          <li><svg class="ic"><use href="#i-tool"/></svg><div><b>Coordination gaps</b><span>Engineering, procurement and construction run out of step, and schedules slip.</span></div></li>
+          <li><svg class="ic"><use href="#i-package"/></svg><div><b>Scope changes</b><span>Unclear scope and variations push costs beyond the original estimate.</span></div></li>
+          <li><svg class="ic"><use href="#i-shield"/></svg><div><b>Safety exposure</b><span>Subcontractors without strong HSE systems put people and operations at risk.</span></div></li>
+          <li><svg class="ic"><use href="#i-plug"/></svg><div><b>Defects at commissioning</b><span>Problems found late mean rework and a delayed handover.</span></div></li>
+        </ul>
+      </div>
+      <div class="out">
+        <div class="tag"><svg class="ic" style="width:22px;height:22px"><use href="#i-check"/></svg> How 7 Star works</div>
+        <ul>
+          <li><svg class="ic"><use href="#i-cog"/></svg><div><b>One point of accountability</b><span>Civil, Mechanical and E&amp;I delivered by one EPCC team, from design to commissioning.</span></div></li>
+          <li><svg class="ic"><use href="#i-shield"/></svg><div><b>Certified safety and quality</b><span>ISO 45001:2018 safety management and ISO 9001:2015 quality management.</span></div></li>
+          <li><svg class="ic"><use href="#i-award"/></svg><div><b>Tested before handover</b><span>NDT, destructive testing, pre-commissioning and plant commissioning.</span></div></li>
+          <li><svg class="ic"><use href="#i-factory"/></svg><div><b>Own workshops</b><span>Fabrication workshops in Lahore and Karachi support site delivery.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PORTFOLIO -->
+<section class="sec alt" id="portfolio">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Portfolio</div>
+      <h2>Selected project work</h2>
+      <p class="lead">Site photographs from our infrastructure and civil portfolio, as shown in the company profile.</p>
+    </div>
+    <div class="gal rv">
+      <figure><img src="assets/projects/00-boring-dewatering.jpg" alt="Boring and dewatering work" loading="lazy"><figcaption>Boring &amp; Dewatering Work</figcaption></figure>
+      <figure><img src="assets/projects/01-civil-structure.jpg" alt="Civil structure work" loading="lazy"><figcaption>Civil Structure Work</figcaption></figure>
+      <figure><img src="assets/projects/02-foundation-work.jpg" alt="Foundation work with rebar" loading="lazy"><figcaption>Foundation Work</figcaption></figure>
+      <figure><img src="assets/projects/03-steel-installation.jpg" alt="Steel structure installation with crane" loading="lazy"><figcaption>Steel Structure Installation</figcaption></figure>
+      <figure><img src="assets/projects/04-islamabad-airport.jpg" alt="Steel structure at Islamabad Airport" loading="lazy"><figcaption>Islamabad Airport Structure</figcaption></figure>
+      <figure><img src="assets/projects/05-islamabad-metro.jpg" alt="Islamabad Metro Station structure" loading="lazy"><figcaption>Islamabad Metro Station</figcaption></figure>
+      <figure><img src="assets/projects/06-m9-pedestrian-bridge.jpg" alt="Pedestrian bridge being lifted into place" loading="lazy"><figcaption>M-9 Motorway Pedestrian Bridge</figcaption></figure>
+      <figure><img src="assets/projects/07-lahore-metro-flooring.jpg" alt="Lahore Metro pedestrian walkway" loading="lazy"><figcaption>Lahore Metro Flooring</figcaption></figure>
+      <figure><img src="assets/projects/08-lahore-metro-station.jpg" alt="Lahore Metro Station site" loading="lazy"><figcaption>Lahore Metro Station</figcaption></figure>
+      <figure><img src="assets/projects/09-naphda-foundation.jpg" alt="NAPHDA foundation excavation" loading="lazy"><figcaption>NAPHDA Foundation Work</figcaption></figure>
+      <figure><img src="assets/projects/10-pedestrian-bridge-1.jpg" alt="Pedestrian bridge work with site crew" loading="lazy"><figcaption>Pedestrian Bridge Work</figcaption></figure>
+      <figure><img src="assets/projects/11-pedestrian-bridge-2.jpg" alt="Steel pedestrian bridge stairs" loading="lazy"><figcaption>Pedestrian Bridge Work</figcaption></figure>
+    </div>
+    <div class="pf-foot">
+      <p>56 projects across six sectors are listed in our company profile.</p>
+      <a href="#sectors" class="btn btn-line">See projects by sector</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SERVICES GRID -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Services</div>
+      <h2>Eight core services</h2>
+      <p class="lead">Design through to plant maintenance, delivered by in-house teams.</p>
+    </div>
+    <div class="svc-grid rv">
+      <div class="svc"><svg class="ic"><use href="#i-ruler"/></svg><h3>Design &amp; Engineering</h3><ul><li>Architectural and structural design</li><li>Pre-engineered buildings</li><li>MEP and fire-fighting design</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-building"/></svg><h3>Civil</h3><ul><li>Commercial and structural buildings</li><li>Earth works and foundations</li><li>Roads and drainage</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-cog"/></svg><h3>Mechanical</h3><ul><li>Fabrication and erection</li><li>Piping: CS, SS, alloy, HDPE, GRP, FRP</li><li>Storage tanks and insulation</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-plug"/></svg><h3>Electrical &amp; Instrumentation</h3><ul><li>Earthing, cable tray and panels</li><li>Instrumentation and control</li><li>PLC, SCADA and IoT systems</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-shield"/></svg><h3>Testing &amp; Commissioning</h3><ul><li>NDT and destructive testing</li><li>Pre-commissioning</li><li>Plant and rotary equipment commissioning</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-tool"/></svg><h3>Plant Maintenance</h3><ul><li>Preventive and predictive maintenance</li><li>Periodic shutdown and turnaround</li><li>Unplanned shutdown repairs</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-package"/></svg><h3>Supplies</h3><ul><li>Mechanical and electrical supplies</li><li>VFDs, PLCs, cables, switchgear</li><li>Rental equipment</li></ul></div>
+      <div class="svc"><svg class="ic"><use href="#i-box"/></svg><h3>Industrial Manufacturing</h3><ul><li>Product design and 3D/2D drawing</li><li>FEA and CFD analysis</li><li>CNC programming and prototyping</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHO WE SERVE -->
+<section class="sec alt" id="sectors">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Who we serve</div>
+      <h2>Six demanding sectors</h2>
+      <p class="lead">Logos below are clients listed for each sector in our company profile.</p>
+    </div>
+    <div class="sectors rv" id="sectorCards"></div>
+  </div>
+</section>
+
+<!-- 7. REAL SUCCESS STORIES (case files from the profile; results to be added with client approval) -->
+<section class="sec" id="stories">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Real success stories</div>
+      <h2>Project case files</h2>
+      <p class="lead">What we delivered on three projects from our profile. Dashed boxes are for approved results only.</p>
+    </div>
+    <div class="cases rv">
+      <article class="case">
+        <div class="ph"><img src="assets/photos/cement-plant.jpg" alt="Cement plant" loading="lazy"></div>
+        <div class="cb">
+          <span class="sector-tag">Cement · EPC</span>
+          <h3>Maple Leaf Cement, Mianwali</h3>
+          <p>EPC of the alternative fuel conveying system, plus equipment installation, piping and packing plant works on the Mianwali lines.</p>
+          <div class="res">Result: add approved plant figures from the client.</div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="ph"><img src="assets/projects/06-m9-pedestrian-bridge.jpg" alt="Pedestrian bridge being lifted into place" loading="lazy"></div>
+        <div class="cb">
+          <span class="sector-tag">Infrastructure · NHA</span>
+          <h3>M-9 Motorway Pedestrian Bridge</h3>
+          <p>Steel pedestrian bridge work for the National Highway Authority, including lifting and placement on the motorway.</p>
+          <div class="res">Result: add approved completion details from NHA.</div>
+        </div>
+      </article>
+      <article class="case">
+        <div class="ph"><img src="assets/projects/08-lahore-metro-station.jpg" alt="Lahore Metro Station site" loading="lazy"></div>
+        <div class="cb">
+          <span class="sector-tag">Infrastructure · Civil</span>
+          <h3>Lahore Metro Station</h3>
+          <p>Civil and structural works at the Lahore Metro Station site. The profile also lists metro flooring works on the Lahore Metro.</p>
+          <div class="res">Result: add approved project outcome.</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PROCESS -->
+<section class="sec alt" id="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Process</div>
+      <h2>How a project moves from brief to handover</h2>
+    </div>
+    <div class="process rv">
+      <div class="step"><div class="n">01</div><h3>Inquiry &amp; scope</h3><p>You share the scope, location and timeline. We review the requirements and site conditions.</p></div>
+      <div class="step"><div class="n">02</div><h3>Engineering</h3><p>Design, drawings and specifications for civil, mechanical and E&amp;I works.</p></div>
+      <div class="step"><div class="n">03</div><h3>Procurement</h3><p>Materials, equipment and supplies sourced, inspected and tracked to site.</p></div>
+      <div class="step"><div class="n">04</div><h3>Construction</h3><p>Fabrication, erection and installation with safety and quality checks at each stage.</p></div>
+      <div class="step"><div class="n">05</div><h3>Commissioning &amp; handover</h3><p>Testing, pre-commissioning and plant commissioning before the handover.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. CTA -->
+<section class="cta-band sec" id="cta" style="padding-block:72px">
+  <div class="wrap">
+    <div>
+      <h2>Ready to start your project?</h2>
+      <p>Tell us your requirements. Our engineering team will review the scope and come back with next steps.</p>
+    </div>
+    <div class="btns">
+      <a href="#contact" class="btn btn-red">Get a Free Quote</a>
+      <a href="#contact" class="btn btn-line">Call +92 423 543 4444</a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. WHY CHOOSE US (USP) -->
+<section class="sec dark" id="why">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Why choose us</div>
+      <h2 style="color:#fff">Why clients choose 7 Star</h2>
+    </div>
+    <div class="why-grid rv">
+      <div><svg class="ic"><use href="#i-cog"/></svg><h3>One roof, full scope</h3><p>Civil, Mechanical and Electrical &amp; Instrumentation delivered by one company.</p></div>
+      <div><svg class="ic"><use href="#i-award"/></svg><h3>Licensed &amp; certified</h3><p>PEC C1 and OGRA registration, ISO 9001:2015 and ISO 45001:2018 certification.</p></div>
+      <div><svg class="ic"><use href="#i-shield"/></svg><h3>Tested before handover</h3><p>Non-destructive and destructive testing, pre-commissioning and plant commissioning.</p></div>
+      <div><svg class="ic"><use href="#i-globe"/></svg><h3>Pakistan &amp; UAE</h3><p>Group companies in Lahore, Karachi, Dubai and UAQ.</p></div>
+    </div>
+    <div class="cert-strip rv" id="certStrip"></div>
+  </div>
+</section>
+
+<!-- 11. TESTIMONIALS (placeholders until approved quotes are supplied) -->
+<section class="sec alt" id="testimonials">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Testimonials</div>
+      <h2>What clients say</h2>
+    </div>
+    <div class="quotes rv">
+      <div class="quote"><div class="q">"</div><p>Add an approved client quote here, with the client's permission.</p><div class="who">Client name<small>Designation, Company</small></div><div class="pl">Placeholder</div></div>
+      <div class="quote"><div class="q">"</div><p>Add an approved client quote here, with the client's permission.</p><div class="who">Client name<small>Designation, Company</small></div><div class="pl">Placeholder</div></div>
+      <div class="quote"><div class="q">"</div><p>Add an approved client quote here, with the client's permission.</p><div class="who">Client name<small>Designation, Company</small></div><div class="pl">Placeholder</div></div>
+    </div>
+    <p class="note">These cards are placeholders. No client quotes are included because none were provided in the company profile.</p>
+  </div>
+</section>
+
+<!-- 12. FAQs -->
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div>
+      <div class="eyebrow">FAQs</div>
+      <h2>Frequently asked questions</h2>
+      <p class="lead">Can't find your answer? Call or email us and we will respond.</p>
+    </div>
+    <div>
+      <details open><summary>What does EPCC mean?</summary><p>Engineering, Procurement, Construction and Commissioning. We take responsibility for all four stages, so one team is accountable from design to handover.</p></details>
+      <details><summary>Which sectors do you serve?</summary><p>Oil &amp; Gas, Power, Petro-Chemical, Cement, Automobile and Infrastructure.</p></details>
+      <details><summary>Which licences and certificates do you hold?</summary><p>PEC C1 contractor registration, OGRA registration, ISO 9001:2015 quality management, ISO 45001:2018 occupational health and safety, and SECP incorporation.</p></details>
+      <details><summary>Do you offer plant maintenance and shutdown work?</summary><p>Yes. We provide preventive and predictive maintenance, periodic shutdowns, annual turnarounds and unplanned repairs.</p></details>
+      <details><summary>Do you manufacture equipment?</summary><p>Our Lahore and Karachi workshops fabricate products including LPG bowsers, silos, conveyors, bucket elevators, process piping and penstocks.</p></details>
+      <details><summary>Do you work outside Pakistan?</summary><p>Our group has companies in Dubai and UAQ, UAE. Contact us with your project details and we will confirm what we can deliver.</p></details>
+      <details><summary>How do I start a project?</summary><p>Send us your scope, location and timeline by phone or email. We reply with next steps after reviewing your requirements.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 13. CONTACT US -->
+<section class="sec alt" id="contact">
+  <div class="wrap contact">
+    <div class="rv">
+      <div class="eyebrow">Contact us</div>
+      <h2>Start your project</h2>
+      <p class="lead">Share your scope, location and timeline. Reach us by phone or email below.</p>
+      <div class="direct" style="margin-top:28px">
+        <div class="drow"><svg class="ic"><use href="#i-phone"/></svg><b>+92 423 543 4444</b><button class="copy" data-copy="+92 423 543 4444">Copy</button></div>
+        <div class="drow"><svg class="ic"><use href="#i-mail"/></svg><b>info@7star.org</b><button class="copy" data-copy="info@7star.org">Copy</button></div>
+        <div class="drow"><svg class="ic"><use href="#i-globe"/></svg><b>www.7star.org</b><button class="copy" data-copy="www.7star.org">Copy</button></div>
+      </div>
+    </div>
+    <div class="offices rv">
+      <div class="office"><strong>Registered office</strong><p>338-Umar Block, A.I.T.<br>Lahore, Pakistan</p></div>
+      <div class="office"><strong>Business office</strong><p>09-Raza Block, A.I.T.<br>Wahdat Road, Lahore, Pakistan</p></div>
+      <div class="office"><strong>Group companies</strong><p>Workshop: Karachi, Pakistan<br>Workshop: Lahore, Pakistan<br>LLC: Dubai, UAE &nbsp;·&nbsp; FZE: UAQ, UAE</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="assets/logo/logo-light-on-dark.png" alt="7 Star Engineering Kinetics logo">
+        <p>Your partner in EPC engineering projects and plant services, since 2004.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Design &amp; Engineering</a></li>
+          <li><a href="#services">Civil</a></li>
+          <li><a href="#services">Mechanical</a></li>
+          <li><a href="#services">Electrical &amp; Instrumentation</a></li>
+          <li><a href="#services">Plant Maintenance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#sectors">Who we serve</a></li>
+          <li><a href="#why">Why choose us</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>+92 423 543 4444</li>
+          <li>info@7star.org</li>
+          <li>www.7star.org</li>
+          <li>338-Umar Block, A.I.T., Lahore</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 7 Star Engineering Kinetics (Pvt) Ltd. All rights reserved.</span>
+      <span>PEC C1 · OGRA · ISO 9001:2015 · ISO 45001:2018</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* Reveal on scroll. Content is already visible without JS. */
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+
+/* Client logos (real, cropped from the profile's clients page). */
+var CLIENTS=[
+ ['00-al-haramain.png','Al Haramain Properties'],['01-bestway.png','Bestway'],['02-byco.png','BYCO'],
+ ['03-china-three-gorges.png','China Three Gorges'],['04-descon.png','Descon'],['05-dg-cement.png','DG Cement'],
+ ['06-plra.png','PLRA Punjab'],['07-fauji-cement.png','Fauji Cement'],['08-deeba.png','Deeba'],
+ ['09-hyundai.png','Hyundai'],['10-fwo.png','FWO'],['11-bulleh-shah.png','Bulleh Shah Packaging'],
+ ['12-irrigation-kpk.png','Irrigation Department KPK'],['13-lda.png','LDA'],['14-powerchina.png','PowerChina'],
+ ['15-lucky-electric.png','Lucky Electric Power'],['16-mg.png','MG'],['17-nha.png','NHA'],
+ ['18-national-power-parks.png','National Power Parks'],['19-hamara-azam.png','Hamara Azam Khushal Pakistan'],
+ ['20-client-r3c7.png','Client'],['21-pedo.png','PEDO'],['22-pioneer-cement.png','Pioneer Cement'],
+ ['23-shell.png','Shell'],['24-wapda.png','WAPDA'],['25-nishat.png','Nishat'],
+ ['26-power-cement.png','Power Cement'],['27-serena-hotels.png','Serena Hotels'],['28-sitara-chemical.png','Sitara Chemical'],
+ ['29-nlc.png','NLC'],['30-maple-leaf.png','Maple Leaf Cement'],['31-k-electric.png','K-Electric'],
+ ['32-sepco.png','SEPCO'],['33-shan.png','Shan Foods'],['34-hubco.png','HUBCO'],
+ ['35-slm.png','Service Long March'],['36-secmc.png','SECMC'],['37-rafhan.png','Rafhan Maize'],['38-parco.png','PARCO / Pak-Arab Refinery']
+];
+function logoCell(file,name){
+  var d=document.createElement('div'); d.className='lg-cell';
+  var i=document.createElement('img'); i.src='assets/clients/'+file; i.alt=name; i.loading='lazy';
+  d.appendChild(i); return d;
+}
+(function(){
+  var t=document.getElementById('track');
+  var list=CLIENTS.concat(CLIENTS);
+  list.forEach(function(c,idx){
+    var cell=logoCell(c[0],c[1]);
+    if(idx>=CLIENTS.length) cell.setAttribute('aria-hidden','true');
+    t.appendChild(cell);
+  });
+})();
+
+/* Sectors with the client logos listed for each in the company profile. */
+var SECTORS=[
+ {name:'Oil & Gas',img:'assets/photos/tanks-dusk.jpg',alt:'Storage tanks at a refinery at dusk',
+  desc:'Maintenance and rehabilitation for refineries, pipelines and plant facilities.',
+  logos:[['02-byco.png','BYCO'],['38-parco.png','PARCO'],['23-shell.png','Shell']]},
+ {name:'Power',img:'assets/photos/power-bw.jpg',alt:'Power plant with cooling tower',
+  desc:'EPC, equipment installation and fire protection for thermal, combined-cycle and hydro plants.',
+  logos:[['24-wapda.png','WAPDA'],['31-k-electric.png','K-Electric'],['14-powerchina.png','PowerChina'],['34-hubco.png','HUBCO'],['18-national-power-parks.png','National Power Parks']]},
+ {name:'Petro-Chemical',img:'assets/photos/lpg-vessels.jpg',alt:'LPG vessels and pipework',
+  desc:'Boiler, plant and utility installation for chemical manufacturers.',
+  logos:[['28-sitara-chemical.png','Sitara Chemical'],['04-descon.png','Descon']]},
+ {name:'Cement',img:'assets/photos/cement-plant.jpg',alt:'Cement plant',
+  desc:'Plant shutdowns, conveying systems and equipment installation for cement lines.',
+  logos:[['30-maple-leaf.png','Maple Leaf'],['05-dg-cement.png','DG Cement'],['07-fauji-cement.png','Fauji Cement'],['01-bestway.png','Bestway'],['26-power-cement.png','Power Cement'],['22-pioneer-cement.png','Pioneer Cement']]},
+ {name:'Automobile',img:'assets/photos/automobile-line.jpg',alt:'Vehicle assembly line',
+  desc:'MEP, piping and assembly-plant works for vehicle manufacturers.',
+  logos:[['09-hyundai.png','Hyundai'],['16-mg.png','MG'],['25-nishat.png','Nishat']]},
+ {name:'Infrastructure',img:'assets/photos/construction-site.jpg',alt:'Construction site with steel frame',
+  desc:'Structures, civil works, public buildings and transport projects.',
+  logos:[['17-nha.png','NHA'],['29-nlc.png','NLC'],['13-lda.png','LDA'],['27-serena-hotels.png','Serena Hotels'],['33-shan.png','Shan Foods']]}
+];
+(function(){
+  var wrap=document.getElementById('sectorCards');
+  SECTORS.forEach(function(s){
+    var card=document.createElement('article'); card.className='sector';
+    var img=document.createElement('img'); img.src=s.img; img.alt=s.alt; img.loading='lazy';
+    var sb=document.createElement('div'); sb.className='sb';
+    var h=document.createElement('h3'); h.textContent=s.name;
+    var p=document.createElement('p'); p.textContent=s.desc;
+    var lgs=document.createElement('div'); lgs.className='lgs';
+    s.logos.forEach(function(l){ var c=document.createElement('div'); var i=document.createElement('img'); i.src='assets/clients/'+l[0]; i.alt=l[1]; i.loading='lazy'; c.appendChild(i); lgs.appendChild(c); });
+    sb.appendChild(h); sb.appendChild(p); sb.appendChild(lgs);
+    card.appendChild(img); card.appendChild(sb); wrap.appendChild(card);
+  });
+})();
+
+/* Certificates strip: real scans from the profile. */
+(function(){
+  var certs=[['assets/certs/pec-c1-licence.jpg','PEC C1 licence'],['assets/certs/iso-9001-2015.jpg','ISO 9001:2015'],['assets/certs/iso-45001-2018.jpg','ISO 45001:2018'],['assets/certs/secp-incorporation.jpg','SECP incorporation'],['assets/certs/dubai-trade-license.jpg','Dubai commercial licence'],['assets/certs/uaq-license.jpg','UAQ licence']];
+  var s=document.getElementById('certStrip');
+  certs.forEach(function(c){ var f=document.createElement('figure'); var i=document.createElement('img'); i.src=c[0]; i.alt=c[1]; i.loading='lazy'; f.appendChild(i); s.appendChild(f); });
+})();
+
+/* Copy buttons: clipboard works from a click; fall back to a visible hint. */
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var text=btn.getAttribute('data-copy');
+    var done=function(){ btn.textContent='Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent='Copy'; btn.classList.remove('done'); },1600); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done,function(){ btn.textContent='Select text'; });
+    } else { btn.textContent='Select text'; }
+  });
+});
+</script>
+
+</body></html>
